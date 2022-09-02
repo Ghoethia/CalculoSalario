@@ -17,16 +17,18 @@ sueldo = int(valor_hora*horas_trabajadas)
 if sueldo != 0:
     op = eval(input("¿realizo horas extras? S/N:"))
     if op == S:
-        cantidad_extras = int(input("Ingrese cantidad horas extra"))
-        clase_extras = str(input("Ingrese si es Diurna, Nocturna"))
+        cantidad_extras = int(input("Ingrese cantidad horas extra: "))
+        clase_extras = str(input("Ingrese si es Diurna o Nocturna: "))
         
         if clase_extras == "Diurna":
            valor_extra = valor_hora * 0.25 * cantidad_extras
            total = sueldo + valor_extra
-        print(f'{nombre} trabajo {horas_trabajadas} ordinarias y {cantidad_extras} extras {clase_extras}, Para total de {total}')
+           print(f'{nombre} trabajo {horas_trabajadas} ordinarias y {cantidad_extras} extras {clase_extras}, Para total de {total}')
+        elif clase_extras == "Nocturna":
+           valor_extra = valor_hora * 1.75 * cantidad_extras
+           total = sueldo + valor_extra
+           print(f'{nombre} trabajo {horas_trabajadas} ordinarias y {cantidad_extras} extras {clase_extras}, Para total de {total}')
         
         
-
     elif op == N:
         print(sueldo)
-       
